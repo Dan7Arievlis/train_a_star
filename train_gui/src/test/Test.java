@@ -7,6 +7,6 @@ public class Test {
   public static void main(String[] args) {
     var g = new Graph();
     
-    g.findPath(Node.E10, Node.E14);
+    g.findPath(Node.E2, Node.E14);
   }
 }
