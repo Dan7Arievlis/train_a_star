@@ -83,24 +83,24 @@
                      <font>
                         <Font size="16.0" />
                      </font></Label>
-                  <Label fx:id="lblEstInicial" layoutX="24.0" layoutY="52.0" text="     ">
+                  <Label fx:id="lblEstInicial" layoutX="20.0" layoutY="52.0">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lblEstFinal" layoutX="20.0" layoutY="110.0" text="     ">
+                  <Label fx:id="lblEstFinal" layoutX="20.0" layoutY="110.0">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lblDist" layoutX="25.0" layoutY="163.0" text="     ">
+                  <Label fx:id="lblDist" layoutX="20.0" layoutY="163.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblTempo" layoutX="24.0" layoutY="220.0" prefHeight="20.0" prefWidth="49.0" text="      ">
+                  <Label fx:id="lblTempo" layoutX="20.0" layoutY="220.0" prefHeight="20.0" prefWidth="23.0">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="lblBaldeacoes" alignment="TOP_LEFT" layoutX="20.0" layoutY="277.0" prefHeight="141.0" prefWidth="209.0" text="                    ">
+                  <Label fx:id="lblBaldeacoes" alignment="TOP_LEFT" layoutX="20.0" layoutY="277.0" prefHeight="151.0" prefWidth="219.0">
                      <font>
                         <Font size="14.0" />
                      </font>
