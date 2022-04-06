@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import graph.Graph;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -19,6 +20,7 @@ public class Main extends Application {
 //  GraphicsContext gc;
   
   boolean running = true;
+  public static Graph graph = new Graph();
 
   @Override
   public void start(Stage primaryStage) {

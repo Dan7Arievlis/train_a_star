@@ -3,6 +3,7 @@ package graph;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class Graph {
     {0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  5},
     {0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0},
   };
-  Map<Node, ArrayList<Edge>> adjList;
+  private Map<Node, ArrayList<Edge>> adjList;
 
   public Graph() {
     super();
@@ -65,6 +66,10 @@ public class Graph {
     connectLine(list, Line.YELLOW, 4, 11, 9, 21, 2);
 
     System.out.println(this);
+  }
+  
+  public HashSet<Node> getNodes() {
+    return (HashSet<Node>) adjList.keySet();
   }
   
   public int getSize() {

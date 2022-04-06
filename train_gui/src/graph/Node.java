@@ -36,6 +36,10 @@ public class Node implements Comparable<Node> {
     this.heapIndex = heapIndex;
   }
 
+  public String getName() {
+    return name;
+  }
+  
   public int getfCost() {
     return gCost + hCost;
   }
