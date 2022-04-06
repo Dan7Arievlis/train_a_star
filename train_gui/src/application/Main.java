@@ -24,13 +24,15 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) {
-    primaryStage.setTitle("Timeline Example");
+    primaryStage.setTitle("Train A*");
 
     try {
       AnchorPane root = FXMLLoader.load(getClass().getResource("scenes/Main.fxml"));
+      AnchorPane stations = FXMLLoader.load(getClass().getResource("scenes/Stations.fxml"));
       
       Canvas canvas = new Canvas(750, 430);
       root.getChildren().add(canvas);
+      root.getChildren().add(stations);
       
       Scene theScene = new Scene(root);
       primaryStage.setScene(theScene);
@@ -50,7 +52,7 @@ public class Main extends Application {
           // aresta foi visitada ou não no percurso
           Color color = (currentNanoTime / 100000000) % 100 < 40 ? Color.YELLOW : Color.AQUA;
           gc.setStroke(color);
-          gc.setLineWidth(4);
+          gc.setLineWidth(40);
           gc.strokeLine(10, 0, 10, 300);
         }
       }.start();

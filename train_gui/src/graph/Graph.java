@@ -3,10 +3,10 @@ package graph;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import pathfinding.AStar;
@@ -68,8 +68,8 @@ public class Graph {
     System.out.println(this);
   }
   
-  public HashSet<Node> getNodes() {
-    return (HashSet<Node>) adjList.keySet();
+  public Set<Node> getNodes() {
+    return adjList.keySet();
   }
   
   public int getSize() {
