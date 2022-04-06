@@ -2,6 +2,7 @@ package graph;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -70,6 +71,10 @@ public class Graph {
   
   public Set<Node> getNodes() {
     return adjList.keySet();
+  }
+  
+  public Collection<ArrayList<Edge>> getEdges() {
+    return adjList.values();
   }
   
   public int getSize() {
