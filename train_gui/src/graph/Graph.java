@@ -1,6 +1,5 @@
 package graph;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -10,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import application.controller.LabelController;
 import pathfinding.AStar;
 
 public class Graph {
@@ -69,6 +69,10 @@ public class Graph {
     System.out.println(this);
   }
   
+  public Map<Node, ArrayList<Edge>> getAdjList() {
+    return adjList;
+  }
+  
   public Set<Node> getNodes() {
     return adjList.keySet();
   }
@@ -83,48 +87,8 @@ public class Graph {
   
   public void findPath(Node startNode, Node endNode) {
     var path = AStar.findPath(this, startNode, endNode);
-    System.out.println("Estações do caminho: " + path);
     
-    var edges = nodesToEdges(path);
-    System.out.println("Linhas: " + edges + "\n");
-    
-    int sum = 0;
-    for (Edge edge : edges) 
-      sum+=edge.distance;
-    System.out.println(sum + " Quilômetros\n");
-    
-    float time = sum / 30f;
-    LocalTime timeDay = LocalTime.ofSecondOfDay((long)(time * 3600));
-    
-    Edge prevEdge = null;
-    for (Edge currentEdge : edges) {
-      if (prevEdge != null && prevEdge.line != currentEdge.line) {
-        System.out.format("BALDEAÇÃO entre as linhas: %-6s -> %6s na Estação %s%n", 
-            prevEdge.line, currentEdge.line, prevEdge.begin);
-        timeDay = timeDay.plusMinutes(4);
-      }
-      prevEdge = currentEdge;
-    }
-    
-    System.out.format("\nTempo total gasto = %02dh%02d%n", timeDay.getHour(), timeDay.getMinute());
-  }
-
-  private List<Edge> nodesToEdges(List<Node> path) {
-    List<Edge> edges = new ArrayList<>();
-    Node prevStation = null;
-    for (Node currentStation : path) {
-      if (prevStation != null) {
-        for (Edge e : adjList.get(prevStation)) {
-          if(e.begin == currentStation) {
-            edges.add(e);
-            continue;
-          }
-        }
-      }
-      prevStation = currentStation;
-    }
-    
-    return edges;
+    LabelController.update(startNode, endNode, path);
   }
 
   public int getDistance(Node nodeA, Node nodeB) {
@@ -163,7 +127,7 @@ public class Graph {
   public List<Node> getNeighbours(Node node){
     var edges = this.adjList.get(node);
     List<Node> neighbours = new LinkedList<>();
-    edges.stream().forEach(e -> neighbours.add(e.begin));
+    edges.stream().forEach(e -> neighbours.add(e.getBegin()));
     return neighbours;
   }
 

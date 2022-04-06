@@ -35,15 +35,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="362.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="362.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LabelController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="386.0" prefWidth="753.0" VBox.vgrow="ALWAYS">
          <children>
@@ -63,20 +62,49 @@
           </MenuBar>
             <Pane layoutX="505.0" prefHeight="433.0" prefWidth="248.0">
                <children>
-                  <TableView layoutX="9.0" layoutY="222.0" prefHeight="197.0" prefWidth="231.0">
-                    <columns>
-                      <TableColumn prefWidth="59.0" text="L1" />
-                      <TableColumn prefWidth="64.0" text="L2" />
-                        <TableColumn prefWidth="102.0" text="Estaçao" />
-                    </columns>
-                  </TableView>
-                  <Label layoutX="15.0" layoutY="187.0" text="Baldeçoes" />
-                  <Label layoutX="14.0" layoutY="35.0" text="Estaçao inicial" />
-                  <Label layoutX="14.0" layoutY="87.0" text="Estaçao de destino" />
-                  <Label layoutX="15.0" layoutY="134.0" text="Tempo" />
-                  <Label fx:id="lblEstInicial" layoutX="14.0" layoutY="61.0" text="Valor aqui" />
-                  <Label fx:id="lblEstFinal" layoutX="14.0" layoutY="110.0" text="Outro valor aqui" />
-                  <Label fx:id="lblTempo" layoutX="14.0" layoutY="158.0" text="Tempo total" />
+                  <Label layoutX="15.0" layoutY="27.0" text="Estaçao inicial">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="12.0" layoutY="85.0" text="Estaçao de destino">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="17.0" layoutY="138.0" text="Distância">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="195.0" text="Tempo">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="11.0" layoutY="252.0" text="Baldeçoes:">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label fx:id="lblEstInicial" layoutX="24.0" layoutY="52.0" text="     ">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lblEstFinal" layoutX="20.0" layoutY="110.0" text="     ">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lblDist" layoutX="25.0" layoutY="163.0" text="     ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTempo" layoutX="24.0" layoutY="220.0" prefHeight="20.0" prefWidth="49.0" text="      ">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lblBaldeacoes" alignment="TOP_LEFT" layoutX="20.0" layoutY="277.0" prefHeight="141.0" prefWidth="209.0" text="                    ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>
