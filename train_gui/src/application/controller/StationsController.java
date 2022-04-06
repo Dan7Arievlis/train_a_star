@@ -12,11 +12,11 @@ import javafx.scene.control.RadioButton;
 public class StationsController {
   @FXML
   private RadioButton E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14;
-//  private int clicks = 0;
   private BlockingQueue<Node> queue = new LinkedBlockingQueue<>(2);
 
   public void select(ActionEvent event) {
-    System.out.println("StationsController.select()");
+    RadioButton[] buttonArray= {E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, E12, E13, E14};
+    
     RadioButton button = (RadioButton) event.getSource();
     String station = button.getId();
     Node stationNode = null;
@@ -29,17 +29,17 @@ public class StationsController {
 
     if (button.isSelected()) {
       System.out.println("ID: " + stationNode.getName());
-      if (queue.size() == 2) {
+      if (queue.size() == 1) {
         try {
-          queue.take();
-          Main.graph.findPath(queue.peek(), stationNode);
-          queue.add(stationNode);
+          Node fst = queue.take();
+          Main.graph.findPath(fst, stationNode);
+          for (RadioButton rb : buttonArray)
+            rb.setSelected(false);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
       }else {
         queue.add(stationNode);
-        button.setSelected(false);
       }
     }
   }

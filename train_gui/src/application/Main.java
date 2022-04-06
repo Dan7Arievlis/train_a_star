@@ -53,7 +53,7 @@ public class Main extends Application {
           Color color = (currentNanoTime / 100000000) % 100 < 40 ? Color.YELLOW : Color.AQUA;
           gc.setStroke(color);
           gc.setLineWidth(40);
-          gc.strokeLine(10, 0, 10, 300);
+//          gc.strokeLine(10, 0, 10, 300);
         }
       }.start();
 
