@@ -49,7 +49,7 @@
          <children>
             <Pane fx:id="imagePane" prefHeight="433.0" prefWidth="505.0" style="-fx-background-color: #000000;">
                <children>
-                  <ImageView fitHeight="353.0" fitWidth="505.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="353.0" fitWidth="505.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../train%20map.png" />
                      </image>
