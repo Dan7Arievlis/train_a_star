@@ -28,7 +28,6 @@ public class StationsController {
     }
 
     if (button.isSelected()) {
-      System.out.println("StationsController.select():  " + "ID: " + stationNode.getName());
       if (queue.size() == 1) {
         try {
           Node fst = queue.take();

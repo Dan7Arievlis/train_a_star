@@ -27,7 +27,8 @@ public class EdgeGUI {
   public boolean isEqual(Set<Node> other) {
     return nodes.equals(other);
   }
-
+  
+  @SuppressWarnings("exports")
   public void draw(GraphicsContext gc) {
     Color color = isActive ? Color.DEEPPINK : line.getColor();
     gc.setStroke(color);

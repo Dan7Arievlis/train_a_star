@@ -1,9 +1,7 @@
 package application;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import graph.Edge;
 import graph.EdgeGUI;
 import graph.Graph;
 import javafx.animation.AnimationTimer;

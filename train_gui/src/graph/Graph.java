@@ -78,7 +78,7 @@ public class Graph {
     connectLine(list, yellowX, yellowY, Line.YELLOW, 4, 11, 9, 21, 2);
   }
 
-  private void printMatrix() {
+  public void printMatrix() {
     for (int i = 0; i < distanceMatrix.length; i++) {
     for (int j = 0; j < distanceMatrix.length; j++) {
       System.out.format("%02d ", distanceMatrix[i][j]);
@@ -114,12 +114,11 @@ public class Graph {
     }
 
     var edges = Graph.nodesToEdges(Main.graph, path);
-    System.out.println(edges);
     for (Edge edge : edges) {
       this.setActiveEdge(edge.getBegin(), edge.getEnd());
     }
 
-    new LabelsController().update(startNode, endNode, path);
+    LabelsController.update(startNode, endNode, path);
   }
 
   private void setActiveEdge(Node begin, Node end) {
