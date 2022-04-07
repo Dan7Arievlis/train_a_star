@@ -1,34 +1,33 @@
 package application.controller;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import application.Main;
 import graph.Edge;
+import graph.Graph;
 import graph.Node;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class LabelController {
+public class LabelsController {
   @FXML
-  private static Label lblEstInicial, lblEstFinal, lblDist, lblTempo, lblBaldeacoes;
+  private Label lblEstInicial, lblEstFinal, lblDist, lblTempo, lblBaldeacoes;
   
   @SuppressWarnings("exports")
-  public static void update(Node startNode, Node endNode, List<Node> path) {
+  public void update(Node startNode, Node endNode, List<Node> path) {
     System.out.println("Estações do caminho: " + path);
     lblEstInicial.setText(startNode.toString());
-    lblEstFinal.setText(endNode.toString());
+//    lblEstFinal.setText(endNode.toString());
     
-    
-    var edges = nodesToEdges(path);
+    var edges = Graph.nodesToEdges(Main.graph, path);
     System.out.println("Linhas: " + edges + "\n");
     
     int sum = 0;
     for (Edge edge : edges) 
       sum+=edge.getDistance();
     System.out.println(sum + " Quilômetros\n");
-    lblDist.setText(sum + " km");
+//    lblDist.setText(sum + " km");
     
     float time = sum / 30f;
     LocalTime timeDay = LocalTime.ofSecondOfDay((long)(time * 3600));
@@ -45,29 +44,11 @@ public class LabelController {
       }
       prevEdge = currentEdge;
     }
-    lblBaldeacoes.setText(lblRes);
+//    lblBaldeacoes.setText(lblRes);
     
     
     String tempo = String.format("%02dh%02d%n", timeDay.getHour(), timeDay.getMinute());
-    System.out.println("\\nTempo total gasto = " + tempo);
-    lblTempo.setText(tempo);
-  }
-  
-  private static List<Edge> nodesToEdges(List<Node> path) {
-    List<Edge> edges = new ArrayList<>();
-    Node prevStation = null;
-    for (Node currentStation : path) {
-      if (prevStation != null) {
-        for (Edge e : Main.graph.getAdjList().get(prevStation)) {
-          if(e.getBegin() == currentStation) {
-            edges.add(e);
-            continue;
-          }
-        }
-      }
-      prevStation = currentStation;
-    }
-    
-    return edges;
+    System.out.println("\nTempo total gasto = " + tempo);
+//    lblTempo.setText(tempo);
   }
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import graph.Edge;
+import graph.EdgeGUI;
 import graph.Graph;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -30,10 +31,12 @@ public class Main extends Application {
     try {
       AnchorPane root = FXMLLoader.load(getClass().getResource("scenes/Main.fxml"));
       AnchorPane stations = FXMLLoader.load(getClass().getResource("scenes/Stations.fxml"));
+      AnchorPane labels = FXMLLoader.load(getClass().getResource("scenes/Labels.fxml"));
       
       Canvas canvas = new Canvas(750, 430);
       root.getChildren().add(canvas);
       root.getChildren().add(stations);
+      root.getChildren().add(labels);
       
       Scene theScene = new Scene(root);
       primaryStage.setScene(theScene);
@@ -49,9 +52,8 @@ public class Main extends Application {
 //          double t = (currentNanoTime - startNanoTime) / 1000000000.0;
 
           // TESTE
-          for (ArrayList<Edge> edges : graph.getEdges())
-            for (Edge edge : edges)
-              edge.draw(gc);
+          for (EdgeGUI edge : graph.getListEdgesGUI())
+            edge.draw(gc);
         }
       }.start();
 

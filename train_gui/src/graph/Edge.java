@@ -1,39 +1,38 @@
 package graph;
 
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
-
 public class Edge {
   Node begin;
   int distance;
   Node end;
   Line line;
-  boolean isActive;
-//  double[] xPoints, yPoints;
-//  int nPoints;
 
   public Edge(Node begin, int distance, Node end, Line line) {
     this.begin = begin;
     this.distance = distance;
     this.end = end;
     this.line = line;
-//    this.nPoints = xPoints.length;
   }
 
-  public void setActive(boolean isActive) {
-    this.isActive = isActive;
+  public Node getBegin() {
+    return begin;
   }
 
-  public void draw(GraphicsContext gc) {
-    Color color = isActive ? Color.ORANGE : this.getLine().getColor();
-    gc.setStroke(color);
-    gc.setLineWidth(4);
-    //    gc.strokePolyline(xPoints, yPoints, nPoints);
+  public Node getEnd() {
+    return end;
+  }
+  
+  public Line getLine() {
+    return line;
   }
 
+  public int getDistance() {
+    return distance;
+  }
+
+  
   @Override
   public String toString() {
-    return "{ " + end + "  - " + getDistance() + "km ->  " + getBegin() + " }";
+    return "{ " + getEnd() + "  - " + getDistance() + "km ->  " + getBegin() + " }";
   }
 
   @Override
@@ -65,17 +64,5 @@ public class Edge {
     if (getLine() != other.getLine())
       return false;
     return true;
-  }
-
-  public Node getBegin() {
-    return begin;
-  }
-
-  public Line getLine() {
-    return line;
-  }
-
-  public int getDistance() {
-    return distance;
   }
 }
