@@ -54,28 +54,28 @@ public class Graph {
     list.addAll(List.of(blueLine));
     double[][] blueX = {{33, 82}, {82, 129, 156}, {156, 213, 248, 281}, {284, 362}, {362, 375, 421, 425, 433}};
     double[][] blueY = {{139, 177}, {177, 211, 211}, {211, 211, 238, 238}, {236, 290}, {290, 300, 266, 266, 273}};
-    connectLine(list, blueX, blueY, Line.BLUE, 11, 9, 7, 13, 3);
+    connectLine(list, blueX, blueY, Line.BLUE, 11, 9, 7, 15, 3);
 
     Node[] redLine = {Node.E11, Node.E9, Node.E3, Node.E13};
     list = new LinkedList<>();
     list.addAll(List.of(redLine));
     double[][] redX = {{126, 194, 194}, {194, 194, 156}, {154, 154, 201, 218}};
     double[][] redY = {{84, 131, 148}, {148, 185, 213}, {211, 282, 317, 317}};
-    connectLine(list, redX, redY, Line.RED, 12, 10, 18);
+    connectLine(list, redX, redY, Line.RED, 14, 10, 19);
 
     Node[] greenLine = {Node.E12, Node.E8, Node.E4, Node.E13, Node.E14};
     list = new LinkedList<>();
     list.addAll(List.of(greenLine));
     double[][] greenX = {{261, 323, 323}, {323, 323, 280, 280}, {279, 258, 258, 223, 223}, {219, 219, 188}};
     double[][] greenY = {{76, 120, 150}, {150, 170, 200, 240}, {244, 261, 277, 277, 314}, {321, 337, 360}};
-    connectLine(list, greenX, greenY, Line.GREEN, 7, 13, 11, 5);
+    connectLine(list, greenX, greenY, Line.GREEN, 7, 16, 13, 5);
 
     Node[] yellowLine = {Node.E10, Node.E2, Node.E9, Node.E8, Node.E5, Node.E7};
     list = new LinkedList<>();
     list.addAll(List.of(yellowLine));
     double[][] yellowX = {{48, 80}, {84, 127, 192}, {196, 324}, {324, 364, 382, 382, 362, 362}, {360, 344, 344, 322}};
     double[][] yellowY = {{199, 176}, {174, 144, 144}, {144, 144}, {144, 144, 158, 184, 200, 292}, {295, 307, 323, 339}};
-    connectLine(list, yellowX, yellowY, Line.YELLOW, 4, 11, 9, 21, 2);
+    connectLine(list, yellowX, yellowY, Line.YELLOW, 4, 11, 11, 28, 2);
   }
 
   public void printMatrix() {

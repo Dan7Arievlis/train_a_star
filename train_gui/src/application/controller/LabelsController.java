@@ -17,7 +17,7 @@ public class LabelsController {
   public static void update(Node startNode, Node endNode, List<Node> path) {
     String res = "";
     res += "Estação inicial: " + startNode;
-    res += "\nEstação fina: " + endNode;
+    res += "\nEstação final: " + endNode;
 //    lblEstInicial.setText(startNode.toString());
 //    lblEstFinal.setText(endNode.toString());
 
