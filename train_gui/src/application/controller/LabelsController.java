@@ -36,7 +36,7 @@ public class LabelsController {
     Edge prevEdge = null;
     for (Edge currentEdge : edges) {
       if (prevEdge != null && prevEdge.getLine() != currentEdge.getLine()) {
-        String baldeacoes = String.format(" %-6s -> %6s na (%s)%n", prevEdge.getLine(),
+        String baldeacoes = String.format(" %-6s -> %6s (%s)%n", prevEdge.getLine(),
             currentEdge.getLine(), prevEdge.getBegin());
         lblRes += baldeacoes;
         timeDay = timeDay.plusMinutes(4);
