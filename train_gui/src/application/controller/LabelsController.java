@@ -48,8 +48,9 @@ public class LabelsController {
 
     String tempo = String.format("%02dh%02d%n", timeDay.getHour(), timeDay.getMinute());
     res += "\n\nTempo gasto: " + tempo;
-    
 //    lblTempo.setText(tempo);
+    
+    res+= "\n\n-----------------------------------------------\n\n";
     System.out.println(res);
   }
 }
