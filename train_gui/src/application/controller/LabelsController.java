@@ -1,6 +1,7 @@
 package application.controller;
 
 import java.time.LocalTime;
+import java.util.Iterator;
 import java.util.List;
 
 import application.Main;
@@ -22,7 +23,15 @@ public class LabelsController {
 //    lblEstFinal.setText(endNode.toString());
 
     var edges = Graph.nodesToEdges(Main.graph, path);
-
+    res+= "\n\nEstações visitadas: " + path;
+    res+= "\nArestas visitadas: \n";
+    for (Edge edge : edges) {
+      res+= "\t" + edge + "\n";
+    }
+    
+    res+= "\n";
+    
+    
     int sum = 0;
     for (Edge edge : edges)
       sum += edge.getDistance();
@@ -36,7 +45,7 @@ public class LabelsController {
     Edge prevEdge = null;
     for (Edge currentEdge : edges) {
       if (prevEdge != null && prevEdge.getLine() != currentEdge.getLine()) {
-        String baldeacoes = String.format(" %-6s -> %6s (%s)%n", prevEdge.getLine(),
+        String baldeacoes = String.format("\t%-6s -> %6s (%s)%n", prevEdge.getLine(),
             currentEdge.getLine(), prevEdge.getBegin());
         lblRes += baldeacoes;
         timeDay = timeDay.plusMinutes(4);
