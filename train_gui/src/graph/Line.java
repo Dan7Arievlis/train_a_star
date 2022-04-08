@@ -24,5 +24,6 @@ public enum Line {
     }
   };
 
+  @SuppressWarnings("exports")
   public abstract Color getColor();
 }
